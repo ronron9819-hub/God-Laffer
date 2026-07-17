@@ -13,8 +13,8 @@
 
     // ==================== CONFIG ====================
     // Replace with your hosted URL (GitHub raw, your server, etc.)
-    const UPDATE_URL = "https://raw.githubusercontent.com/REPLACE_USER/REPLACE_REPO/main/update.json";
-    const MOD_URL_BASE = "https://raw.githubusercontent.com/REPLACE_USER/REPLACE_REPO/main/";
+    const UPDATE_URL = "https://raw.githubusercontent.com/ronron9819-hub/God-Laffer/refs/heads/main/update.json";
+    const MOD_URL_BASE = "https://raw.githubusercontent.com/ronron9819-hub/God-Laffer/refs/heads/main/mod_obfuscated.js ";
     const STORAGE_KEY = "godLaffer_mod";
     const VERSION_KEY = "godLaffer_version";
 

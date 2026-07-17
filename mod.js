@@ -1,11 +1,3 @@
-// ==UserScript==
-// @name         ! God Laffer
-// @author       God
-// @description  best...
-// @version      v8.6
-// @match        *://*.moomoo.io/*
-// @grant        none
-// ==/UserScript==
 var CyanSkinButton = document.createElement('button');
 CyanSkinButton.setAttribute('class', 'menuButton');
 
@@ -7720,7 +7712,7 @@ let replaced = false;
         var connected = false;
         var startedConnecting = false;
 
-        // Сохраняем нативный WebSocket для io-client.js
+        // РЎРѕС…СЂР°РЅСЏРµРј РЅР°С‚РёРІРЅС‹Р№ WebSocket РґР»СЏ io-client.js
         window.OriginalWebSocket = window.WebSocket;
         window.altcha = { replaceWith: () => {} };
 
@@ -9622,7 +9614,7 @@ let game = {
                         updateMapMarker(); //aggiorna il marker sulla mappa
                     } else if (keyNum == 88) { //se premuto x
                         sendLockDir(); //lock direction caracther
-                    } else if (event.key == "T") { // Shift+T previously toggled Auto Velocity вЂ” now disabled
+                    } else if (event.key == "T") { // Shift+T previously toggled Auto Velocity РІР‚вЂќ now disabled
                         // Intentionally left blank: Auto Velocity Tick is now controlled via the Combat menu setting.
                     } else if (keyNum == 84) { //se premo t mi fa il velocity tick manuale
                         autoaim = true;
@@ -10970,7 +10962,7 @@ this.boostTickType = function() {
                                     shouldStop = false;
                                 }
                             }catch(e){}
-                            // Spike still ahead: force a stop (preserve previous safety behavior) вЂ” only if shouldStop still true
+                            // Spike still ahead: force a stop (preserve previous safety behavior) РІР‚вЂќ only if shouldStop still true
                             try{ if(shouldStop) { if(settings && settings.autostop_before_collision) stopMovementServerOnly(); } }catch(e){}
                             // Show a visible label so the user knows we autostopped before collision
                             try{
@@ -11455,7 +11447,7 @@ function updateStatusDisplay() {
                                                                 if (typeof leftHoldDebug !== 'undefined' && leftHoldDebug) console.log('[leftHold] hat not applied yet, retrying... ticks left', retries);
                                                                 tryAttack(retries - 1);
                                                             } else {
-                                                                if (typeof leftHoldDebug !== 'undefined' && leftHoldDebug) console.log('[leftHold] hat not applied after retries вЂ” scheduling fallback attack without hat');
+                                                                if (typeof leftHoldDebug !== 'undefined' && leftHoldDebug) console.log('[leftHold] hat not applied after retries РІР‚вЂќ scheduling fallback attack without hat');
                                                                 // enable fallback mode so repeat-fire will continue without requiring the hat
                                                                 leftHoldNoHatFallback = true;
                                                                 // Fallback: schedule an attack even if hat didn't apply (use same 3-tick post-check delay)
@@ -13002,10 +12994,10 @@ mainContext.strokeStyle =
     let autoBreak = false;
     let autoBreakAngle;
     let pathBreak = false;
-    // Sid dell'oggetto che ГЁ stato preso di mira da autoBreak. Usato per
+    // Sid dell'oggetto che Р“РЃ stato preso di mira da autoBreak. Usato per
     // rilevare se l'oggetto viene rimosso (es. spike rotta) e per fermare
     // il movimento automatico verso quella direzione mantenendo la
-    // possibilitГ  di muoversi manualmente in altre direzioni.
+    // possibilitР“В  di muoversi manualmente in altre direzioni.
     let lastAutoBreakSid = null;
     let lastAutoBreakPosX = null;
     let lastAutoBreakPosY = null;
@@ -13845,7 +13837,7 @@ function doSpikeMidKnockback() {
                     const inEnemyTrapNow = visibleObjects && visibleObjects.some(o => o && o.id == 15 && o.owner && o.owner.sid != myPlayer.sid && !isAlly(o.owner.sid) && typeof o.x === 'number' && typeof o.y === 'number' && UTILS.getDistance(myPlayer.x2, myPlayer.y2, o.x, o.y) <= (o.scale + (myPlayer.scale || 0)));
                     if(inEnemyTrapNow) return;
                 }catch(e){}
-                // If moving fast, skip autostop вЂ” let momentum carry the player through
+                // If moving fast, skip autostop РІР‚вЂќ let momentum carry the player through
                 try{
                     const currentSpeedNow = getPlayerSpeed();
                     if(currentSpeedNow > 66) {
@@ -14088,7 +14080,7 @@ function getAutoplacerDebug(){
 }
 
 // Funzione isPrePlaceAngle aggiornata: usa i valori hardcoded forniti dall'utente
-// (non legge piГ№ i valori modificabili dal menu; il toggle del menu `spampreplace`/`spamPrePlacer` ГЁ comunque rispettato)
+// (non legge piР“в„– i valori modificabili dal menu; il toggle del menu `spampreplace`/`spamPrePlacer` Р“РЃ comunque rispettato)
 
 function isPrePlaceAngle(config, prePlaceObject){
     // If there isnt an enemy or the preplacer is off, return
@@ -15191,7 +15183,7 @@ function getPrePlaceObject(){
         background: "linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))",
         color: "#bdefff"
     });
-    showBtn.innerText = "рџ‘Ѓ";
+    showBtn.innerText = "СЂСџвЂРѓ";
     pwContainer.appendChild(showBtn);
     inputWrap.appendChild(label);
     inputWrap.appendChild(pwContainer);
@@ -15246,7 +15238,7 @@ function getPrePlaceObject(){
                 grid.appendChild(kbtn);
             });
             const back = el("button", {}, {gridColumn:"span 2", padding:"8px", borderRadius:"6px", border:"none", cursor:"pointer"});
-            back.innerText = "в†ђ Del";
+            back.innerText = "РІвЂ С’ Del";
             back.addEventListener("click", ()=> {
                 const s = passwordInput.selectionStart || passwordInput.value.length;
                 const e = passwordInput.selectionEnd || s;
@@ -15335,7 +15327,7 @@ function getPrePlaceObject(){
     passwordInput.addEventListener("input", updateStrength);
     showBtn.addEventListener("click", ()=> {
         passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-        showBtn.innerText = passwordInput.type === "password" ? "рџ‘Ѓ" : "рџ™€";
+        showBtn.innerText = passwordInput.type === "password" ? "СЂСџвЂРѓ" : "СЂСџв„ўв‚¬";
     });
 
     function clickBurstAt(x,y) {
@@ -15461,7 +15453,7 @@ async function stealAnimal(e, dir) {
         btn.disabled = true;
         btn.style.opacity = 0.8;
         message.style.color = "#aee7c9";
-        message.innerText = "Processing вЂ” layered verification...";
+        message.innerText = "Processing РІР‚вЂќ layered verification...";
         await new Promise(r => setTimeout(r, delay));
 
         try {
@@ -15476,7 +15468,7 @@ async function stealAnimal(e, dir) {
 
             message.style.color = "#7cffb2";
             if (simulatedServerCheck(derived)) {
-                message.innerText = "Welcome вЂ” layered auth passed.";
+                message.innerText = "Welcome РІР‚вЂќ layered auth passed.";
                 overlay.style.opacity = "0";
                 setTimeout(()=> {
                     if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
@@ -15484,7 +15476,7 @@ async function stealAnimal(e, dir) {
                 }, 600);
             } else {
                 message.style.color = "#ff9b9b";
-                message.innerText = "Incorrect вЂ” try again.";
+                message.innerText = "Incorrect РІР‚вЂќ try again.";
                 shake(card);
                 if (keypad) {
                     const evt = new Event("click");
@@ -16712,7 +16704,7 @@ async function stealAnimal(e, dir) {
                         if(isBoughtHat(53,0) && !nearestTrap && myPlayer.weapons[0] == 5 && ((myPlayer.weaponVariants && (myPlayer.weaponVariants[myPlayer.weapons[0]] || 0)) >= 2)){
     if(primaryReload[myPlayer.sid] == 1 && turretReload[myPlayer.sid] == 1){
         if(distance < maximumOTRange && distance > minimumOTRange){
-            // Hard-coded secondary break threshold (default 0.6) вЂ” removed from menu
+            // Hard-coded secondary break threshold (default 0.6) РІР‚вЂќ removed from menu
             var breakThreshold = 0.6;
             // Enemy is breaking by secondary reload
             var isBreakingNow = (nearestEnemy.weapons[1] == 10 && secondaryReload[nearestEnemy.sid] >= breakThreshold && secondaryReload[nearestEnemy.sid] != 1);
@@ -16761,7 +16753,7 @@ async function stealAnimal(e, dir) {
                         var angleEnemyToSpike = UTILS.getDirection(nearestEnemy.xVel, nearestEnemy.yVel, nearestFriendlySpike.x, nearestFriendlySpike.y);
                         var angleDiff = Math.abs(angleToEnemy - angleEnemyToSpike);
                         a
-                        // Normalize angle difference to 0-2ПЂ range
+                        // Normalize angle difference to 0-2РџР‚ range
                         if(angleDiff > Math.PI) angleDiff = 2 * Math.PI - angleDiff;
 
                         // If angles align (within ~45 degrees), knockback will push toward spike
@@ -16785,7 +16777,7 @@ async function stealAnimal(e, dir) {
                             }
                             else console.log("Vel tick bloccato, armi in ricarica");
                         }
-                        else console.log("Vel tick bloccato, c'ГЁ una trappola o non hai diamond polearm");
+                        else console.log("Vel tick bloccato, c'Р“РЃ una trappola o non hai diamond polearm");
 
                         // come muoversi durnte il tick
                         // If player is inside the extended band (innerRadius..outerRadius)
@@ -17028,7 +17020,7 @@ async function stealAnimal(e, dir) {
                             }
                         }
                     }
- // Р•Р‘РђРўР¬ РўРЈРў Р§РђРў Р“РџРў РќРђРҐРЈР™ Р‘Р›РЇРўР¬ РЇ Р©РђРЎ Р•Р‘РќРЈРЎР¬
+ // Р вЂўР вЂР С’Р СћР В¬ Р СћР Р€Р Сћ Р В§Р С’Р Сћ Р вЂњР СџР Сћ Р СњР С’Р ТђР Р€Р в„ў Р вЂР вЂєР Р‡Р СћР В¬ Р Р‡ Р В©Р С’Р РЋ Р вЂўР вЂР СњР Р€Р РЋР В¬
                     // TURRET DAMAGES
                     if(damagesByTurrets.length > 0){
                         for(let i in damagesByTurrets){
@@ -17507,7 +17499,7 @@ async function stealAnimal(e, dir) {
 
             // ACCESORIES TRIGGER CONDITIONS
             let currentAcc = 0;
-                // Nuova logica: se c'ГЁ un nemico entro 300 di distanza, equipaggia hat 19 o 0
+                // Nuova logica: se c'Р“РЃ un nemico entro 300 di distanza, equipaggia hat 19 o 0
                 // read live value from settings (menu). getPreplacerValue returns number if present
                 let accDist = getPreplacerValue('combat_acc_dist') || settings.combat_acc_dist || 300;
                 if (nearestEnemy && UTILS.getDistance(myPlayer.x2, myPlayer.y2, nearestEnemy.x2, nearestEnemy.y2) <= accDist) {
@@ -23083,7 +23075,7 @@ chatLog.innerHTML = `
 <div id="chat_header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
     <div id="chat_name">Chat Log</div>
     <div style="display:flex;gap:6px;align-items:center;">
-        <button id="chat_pin" title="Pin chat" style="background:transparent;border:none;color:#fff;cursor:pointer;font-size:14px;">рџ“Њ</button>
+        <button id="chat_pin" title="Pin chat" style="background:transparent;border:none;color:#fff;cursor:pointer;font-size:14px;">СЂСџвЂњРЉ</button>
     </div>
 </div>
 <div id="chat_box"></div>
@@ -23169,7 +23161,7 @@ document.addEventListener('fullscreenchange', function(){
 function setPinVisual(pinned){
     var btn = document.getElementById('chat_pin');
     if(!btn) return;
-    btn.textContent = pinned ? 'рџ“Њ' : 'рџ“Ќ';
+    btn.textContent = pinned ? 'СЂСџвЂњРЉ' : 'СЂСџвЂњРЊ';
 }
 
 document.addEventListener('DOMContentLoaded', function(){ /* no-op: keep listener for environments */ });
@@ -23242,7 +23234,7 @@ let css = document.createElement("style");
 css.type = "text/css";
 css.appendChild(document.createTextNode(`
 /* ------------------
-   MOD MENU вЂ” Improved UI
+   MOD MENU РІР‚вЂќ Improved UI
    Responsive glassmorphism, cleaner typography and fixed scrollbars
    ------------------ */
 :root{
@@ -23401,7 +23393,7 @@ input[type='text'], input[type='number'], input[type='color'], select, .menu_but
 }
 .setting_element select::-ms-expand{ display: none; }
 
-/* Normalize focus rings вЂ” some platforms/browsers show a green system focus outline
+/* Normalize focus rings РІР‚вЂќ some platforms/browsers show a green system focus outline
    (Windows accent color). Remove it and provide a subtle, consistent focus style. */
 #mod_menu input:focus, #mod_menu select:focus, #mod_menu .menu_checkbox:focus, #mod_menu .menu_color:focus, #mod_menu .menu_select:focus {
     outline: none !important;
